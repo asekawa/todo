@@ -1,4 +1,4 @@
-.list{
+.list {
     color: white;
     width: 300px;
     background-color: blueviolet;
@@ -8,26 +8,37 @@
 
 }
 
-.list p{
+.list p {
     padding: 10px;
     position: relative;
 }
-.list p span{
+
+.list p span {
     position: absolute;
     right: 10px;
     cursor: pointer;
 }
-.faicons{
+
+.faicons {
     margin: 0 5px;
     font-size: 15px;
 }
-.list p input{
+
+.inputNormal {
     background-color: transparent;
     border: 0;
     color: white;
     font-size: 18px;
 }
 
-.list p input:focus{
+.inputDone {
+    background-color: transparent;
+    text-decoration: line-through;
+    border: 0;
+    color: white;
+    font-size: 18px;
+}
+
+.list p input:focus {
     outline: none;
 }

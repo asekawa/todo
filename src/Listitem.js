@@ -3,45 +3,45 @@ import './listitem.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
-function Listitem(props)
-{
-    const items =props.items;
-    const listitem =items.map(
-        item => 
-        {
-            return<div className ="list" key={item.key}>
+function Listitem(props) {
+    const items = props.items;
+    const listitem = items.map(
+        item => {
+            return <div className="list" key={item.key}>
                 <p>
-                    <input type="text" 
-                    id={item.key} 
-                    value={item.text}
-                onChange={
-                    (e)=>{props.setupdate(e.target.value,item.key)}
-                }
-                />
-                <span>
-                    <FontAwesomeIcon className ="faicons" icon="trash"
-                    onClick={()=> props.deleteitem(item.key)}/>
+                    <input className={
+                        item.done ? 'inputDone' : 'inputNormal'
+                    } type="text"
+                           id={item.key}
+                           value={item.text}
+                           onChange={
+                               (e) => {
+                                   props.setupdate(e.target.value, item.key)
+                               }
+                           }
+                    />
+                    <span>
+                    <FontAwesomeIcon className="faicons" icon="trash"
+                                     onClick={() => props.deleteitem(item.key)}/>
                     <input type="checkbox"
-                    id={item.key} 
-
-                     onChange={
-                        (e)=>{
-                            console.log("change")
-                            props.setdone(e.target.value,item.key)}
-                     }
+                           id={item.key}
+                           onChange={
+                               (e) => {
+                                   props.setdone(e.target.value, item.key)
+                               }
+                           }
                     />
                     
                 </span>
                 </p>
-                </div>
+            </div>
         }
     )
-    return(
-    <div> {listitem}</div>
-       
+    return (
+        <div> {listitem}</div>
+
     )
 }
-
 
 
 export default Listitem
